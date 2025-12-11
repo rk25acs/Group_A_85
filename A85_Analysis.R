@@ -1,3 +1,9 @@
+#Load Dataset
+gpa_iq<- read.csv("gpa_iq.csv", stringsAsFactors = FALSE)
+
+#Clean Dataset
+gpa_iq$obs <- 1:78
+
 #Statistical analysis
 max(gpa_iq$gpa)
 max(gpa_iq$iq)
@@ -29,3 +35,4 @@ plot(x = gpa_iq$iq, y = gpa_iq$gpa,
      ylab = "GPA",                       
      pch = 19,                           
      col = "blue")
+# 
