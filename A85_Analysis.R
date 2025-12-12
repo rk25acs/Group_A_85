@@ -1,3 +1,12 @@
+#Load Dataset
+gpa_iq<- read.csv("gpa_iq.csv", stringsAsFactors = FALSE)
+
+#Clean Dataset
+num <- nrow(gpa_iq)
+gpa_iq$obs <- 1:num
+gpa_iq <- gpa_iq[gpa_iq$gpa <= 10.0,]
+write.csv(gpa_iq,"gpa_iq.csv", row.names = FALSE)
+
 #Statistical analysis
 max(gpa_iq$gpa)
 max(gpa_iq$iq)
@@ -29,3 +38,23 @@ plot(x = gpa_iq$iq, y = gpa_iq$gpa,
      ylab = "GPA",                       
      pch = 19,                           
      col = "blue")
+
+#Plotting Histogram for GPA
+
+hist(gpa_iq$gpa,
+     main = "Histogram of GPA",
+     xlab = "GPA",
+     ylab = "Frequency",
+     xlim = c(0,11),
+     ylim = c(0,25),
+     col="green")
+
+#Plotting Histogram for IQ
+
+hist(gpa_iq$iq,
+     main = "Histogram of IQ",
+     xlab = "IQ",
+     ylab = "Frequency",
+     xlim = c(70,140),
+     ylim = c(0,25),
+     col="orange")
