@@ -32,14 +32,25 @@ print(cor.test(gpa_iq$gpa,gpa_iq$iq, method = "pearson"))
 
 #Plotting Scatterplot graph
 
+png("Scatterplot.png")
+
 plot(x = gpa_iq$iq, y = gpa_iq$gpa,
      main = "Scatterplot of GPA vs. IQ",  
      xlab = "IQ Score",                  
      ylab = "GPA",                       
-     pch = 19,                           
+     pch = 19,
      col = "blue")
 
+legend("topleft",
+       legend = "Data Points",
+       col = "blue",
+       pch = 19) 
+
+dev.off()
+
 #Plotting Histogram for GPA
+
+png("GPA_Hist.png")
 
 hist(gpa_iq$gpa,
      main = "Histogram of GPA",
@@ -49,7 +60,15 @@ hist(gpa_iq$gpa,
      ylim = c(0,25),
      col="green")
 
+legend("topleft",
+       legend = "GPA Distribution",
+       fill = "green")
+
+dev.off()
+
 #Plotting Histogram for IQ
+
+png("IQ_Hist.png")
 
 hist(gpa_iq$iq,
      main = "Histogram of IQ",
@@ -58,3 +77,9 @@ hist(gpa_iq$iq,
      xlim = c(70,140),
      ylim = c(0,25),
      col="orange")
+
+legend("topright",
+       legend = "IQ Distribution",
+       fill = "orange")
+
+dev.off()
