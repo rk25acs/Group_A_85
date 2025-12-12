@@ -65,21 +65,3 @@ legend("topleft",
        fill = "green")
 
 dev.off()
-
-#Plotting Histogram for IQ
-
-png("IQ_Hist.png")
-
-hist(gpa_iq$iq,
-     main = "Histogram of IQ",
-     xlab = "IQ",
-     ylab = "Frequency",
-     xlim = c(70,140),
-     ylim = c(0,25),
-     col="orange")
-
-legend("topright",
-       legend = "IQ Distribution",
-       fill = "orange")
-
-dev.off()
